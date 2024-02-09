@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Thiệp Tết online nhà N - Long Điệu gửi bạn" />
+    <meta property="og:description"   content="-Tết xa hoá gần- là chiến dịch Tết 2024 - Giáp Thìn được Câu lạc bộ Sự kiện NBK - NSEs thực hiện." />
+    <meta property="og:image"         content="{{ url_for('static', filename='image/logo.png') }}" />
+
+    <title>NSEs</title>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="../static/img/logo.png" />
+    </head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animate.css') }}">
+<body style="width: 100%; height: 100vh;">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v19.0" nonce="zBmDeim8"></script>
+    <div class="abg">
+        <div class="logo">
+            <img style="max-height: 100%;" src="../static/img/logo.png" alt="" srcset="">
+        </div>
+        <div class="app">
+            <div class="wrapper">
+                <div class="vid-wrapper">
+                    <video class="animate__animated" autoplay="autoplay" loop="loop">
+                        <source src="../static/video/{{ video_name }}.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="btn-wrapper">
+                    <div class="animate__animated share-btn" id="fb">
+                        Facebook
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                            <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+                        </svg>
+                    </div>
+                    <div class="animate__animated share-btn" id="copy">
+                        Sao chép
+                        <img src="../static/img/link.png" alt="" srcset="">
+                    </div>
+                    <a href="{{ url_for('dowload', name=video_name ) }}" class="animate__animated share-btn" id="dl">
+                        Tải Xuống
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEnklEQVR4nO2Zz28bRRTHXX79AXCJw73QE0nFAVASCZDoqglJE8fx2g0l8YmEVGpSiaZwiEQjQcWFqolQW6QyY0HVtKIKpZWCU0CIFtzuCtQ2bZGazBoo/ZXYsZRDu7PpQ28dW1Yc/9iZdZWDn/Tktb07bz77nTcz+9bjqVrVqla19WDJae/mVLRmKBmtrX+sgQFGngB29EXOvmq3DDpgxeke2w06gL/hf3hOqXYWo94zCLEY9fLUtBcWo14zOVVbV9nOa4ee5nOkzWJ0gjM6bxkUijmewxk5zuORVry2ULup6ZrdCJH1aM1QZQCuTjxjGWQnN+jfpTpfEMqgcVRrLaBktLYelcgokjj3/EuuQ5jxSCM36DVRgHyVyIwZJw15MFO1dalozaDrEACwwWLkI86I5RZEDgy3GN2LMVztdD7ExJOckS/dBlgD6AjGyo2daPC1JJp8qUSjv1kSAjZgACcdOjT6HgS6fLbjsTMYSnOVQQAEWWjq2Fp2p1NvbntuvsE3uPiK/9nMbzicnN7ZsX39oJAztuOxY3UYGZa6+wtN/qFEUycgTDaxBXJCFoQzwk2DviYMgkokGzt34SdOsaKzk7QiRno2K7bWlG24TogmrSzI8q3vbLcY6ZdfsSUWO7dAuEEMKVU4o9tEIdwaWlZmiBmkRQKEHF9HIN8IQeAOlTNyf92AMDpfzq45H4SRTSIBH9w8WhKEzxEhGJiLvOAYZOV5wlGg+PnPIaS8AedPflwQJDY5Cjta34J/YwedqxKPtFZ82kWIbrUTlFMXIBgO2zCrQX47tQ8C3d2gTMagp3e7CMz7zkFY5EMnQe7q4xBW20E58Qso0RkbZiCwNQuCx8F3toMyddmG7VE74JZTEEb3CoMs3z4LywsxsOJflwx0/88voDfYAVtO/AzKuRno6AlnQdr9gTTEZMw+55/fDzjPEyYCgs/bmGDLDwDNhhFQRjmrg/K9JqeEITG0Msn+aInZMKhMuQFRmXBoRZkfb6RdRglDItlFp99cZXoDK8p8+6usEiA8/Zq6+rJ5fWTJujkmHPiONgbvdrXBDn+bNAQ3yF3Hj8APta7Nph7kXA8C10NgzY7nNaydHrWn1FJPfv9dPFgSAtvAtrTTo+5uUUxN3Z2GWPEb6QUu1zHwlv2Hoau91f5+8sBOOPZZX1G//sN+mBzfZX/id7wGr8U2sK2xItsYbkScP6s/vKjWm7pqIoSphx5Zs/nDK7PYhUKq1JBBxzaK7cc4buPhp6ccg9gwf4TqTF0d5H99+gk2tnTh9TVBfMMjdkdkHNsourFktM8ja3gnLEYuFxpamQVP1gsOLUavuvKoi4YVQLt4tkayu+naqmS3iw+MvOpx03B7IJsLAv6Bx20TKdDJOGf0MNdCLaauprimNleiZHrkcUAAxtLUZhvkUrD86qLDIvbw6pxxB4DwigynYoYVQJxRXANh5IrriV2u4bSIxTNcsIRVwGsZ7XNtihUtbmcLeXH6NjfIMW7Qe6U7T+/h3glrVcIrtpvF7UI5BLNkY/qdIunPvgxF5fCd4SzZWPEXOU6K2yVPrlrVqlY1TwXsf5M3MfNYQAQ4AAAAAElFTkSuQmCC">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <style>
+            
+            .vid-wrapper {
+                flex: 3;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            video {
+                margin: 32px;
+                max-width: 60%;
+                max-height: 90vh;
+                border-radius: 12px;
+                box-shadow: 0px 0px 12px 10px #f33030;
+            }
+
+            .app .wrapper {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .btn-wrapper {
+                margin-right: 32px;
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                justify-content: center;
+                row-gap: 24px;
+                width: 100%;
+                flex: 1;
+                font-size: 18px;
+            }
+
+            .btn-wrapper > .share-btn {
+                background-image: linear-gradient(#fdc64f, #fed891);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 6px 32px;
+                border-radius: 100px;
+                line-height: 100%;
+                cursor: pointer;
+            }
+
+            .btn-wrapper > .share-btn svg,
+            .btn-wrapper > .share-btn img {
+                width: 32px;
+                height: 32px;
+                margin-left: 12px;
+            }
+
+            a.share-btn {
+                display: block;
+                color: inherit;
+                text-decoration: none;
+            }
+
+            .share-btn:hover {
+                opacity: 0.8 !important;
+            }
+
+            @media only screen and (min-width: 850px) and (max-width: 1200px) {
+                video {
+                    max-width: 90%;
+                    margin: 24px;
+                }
+
+                .app .wrapper {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 90%;
+                }
+                
+                .btn-wrapper {
+                    max-width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .share-btn {
+                    width: 50%;
+                    max-width: 100%;
+                }
+            }
+
+            @media only screen and (max-width: 850px) {
+                video {
+                    max-width: 90%;
+                }
+                
+                .app .wrapper {
+                    width: 90%;
+                }
+
+                .vid-wrapper {
+                    width: 90%;
+                }
+
+                .app .wrapper {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .btn-wrapper {
+                    width: 80%;
+                    margin: 0;
+                    margin-top: 12px;
+                    font-size: 20px;
+                }
+            }
+
+        </style>
+
+        <script>
+            
+            document.getElementById('fb').addEventListener('click', () => {
+                l = "https://www.facebook.com/sharer/sharer.php?u=" + window.location.href
+                console.log(l)
+                window.location.href = l
+            })
+
+            document.getElementById('copy').addEventListener('click', () => {
+                navigator.clipboard.writeText(window.location.href)
+            })
+
+            function isElementOnScreen(element) {
+                const rect = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                return rect.bottom >= 0 && rect.top <= windowHeight;
+            }
+
+
+            const animate = () => {
+                ani = document.querySelectorAll('.animate__animated')
+                for(let i = 0; i < ani.length; ++i) {
+                    if(isElementOnScreen(ani[i])) {
+                        ani[i].classList.add('animate__bounceIn')
+                        // ani[i].classList.add('animate__delay-2s')
+                    }
+                }
+            }
+
+            window.onload = animate;
+            document.addEventListener('scroll', animate)
+
+        </script>
+
+        
+
+</body>
+</html>

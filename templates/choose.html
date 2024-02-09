@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSEs</title>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="../static/img/logo.png" />
+    </head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animate.css') }}">
+<body style="width: 100%; height: 100vh;">
+    <div class="abg">
+        <div class="logo">
+            <img style="max-height: 100%;" src="../static/img/logo.png" alt="" srcset="">
+        </div>
+        
+        <div class="app">
+            <div class="ff">
+                <div class="">
+                    <img class="animate__animated" src="../static/img/c-1.png" alt="" srcset="">
+                </div>
+                <div class="animate__animated c-btn">
+                    <div>
+                        <a style="color: inherit; text-decoration: none;" href="/create">Câu chúc</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ff">
+                <div class="">
+                    <img class="animate__animated" src="../static/img/c-2.png" alt="" srcset="">
+                </div>
+                <div class="animate__animated c-btn">
+                    <div>
+                        <a style="color: inherit; text-decoration: none;" href="/random">Lời khuyên</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function isElementOnScreen(element) {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            return rect.bottom >= 0 && rect.top <= windowHeight;
+        }
+
+
+        const animate = () => {
+            ani = document.querySelectorAll('.animate__animated')
+            for(let i = 0; i < ani.length; ++i) {
+                if(isElementOnScreen(ani[i])) {
+                    ani[i].classList.add('animate__bounceIn')
+                    // ani[i].classList.add('animate__delay-2s')
+                }
+            }
+        }
+
+        window.onload = animate;
+        document.addEventListener('scroll', animate)
+
+    </script>
+
+</body>
+</html>

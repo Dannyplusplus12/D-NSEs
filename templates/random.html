@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSEs</title>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="../static/img/logo.png" />
+    </head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animate.css') }}">
+<body style="width: 100%; height: 100vh;">
+    <div class="abg">
+        <div class="logo">
+            <img style="max-height: 100%;" src="../static/img/logo.png" alt="" srcset="">
+        </div>
+        <div class="app">
+            <div style="min-width: 60%;" class="r-top">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <div class="animate__animated c-btn" id="rd-btn">
+                        <div>
+                            TẠO NGẪU NHIÊN
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function rd(min, max) {
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+
+        function random_() {
+            let video_name = ''
+            
+            video_name += rd(10, 22)
+            video_name += rd(0, 5)
+            video_name += rd(0, 8)
+
+
+            window.location.href = "/pv/" + video_name            
+        }
+        
+        document.getElementById('rd-btn').addEventListener('click', random_)
+    
+        function isElementOnScreen(element) {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            return rect.bottom >= 0 && rect.top <= windowHeight;
+        }
+
+
+        const animate = () => {
+            ani = document.querySelectorAll('.animate__animated')
+            for(let i = 0; i < ani.length; ++i) {
+                if(isElementOnScreen(ani[i])) {
+                    ani[i].classList.add('animate__bounceIn')
+                    // ani[i].classList.add('animate__delay-2s')
+                }
+            }
+        }
+
+        window.onload = animate;
+        document.addEventListener('scroll', animate)
+
+    </script>
+</body>
+</html>
