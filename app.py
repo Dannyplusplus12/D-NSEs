@@ -4,8 +4,8 @@ from werkzeug.utils import secure_filename
 import os
 import asyncio
 from random import randrange
-from moviepy.editor import VideoFileClip, clips_array, vfx
-import moviepy.editor as me
+# from moviepy import VideoFileClip, clips_array, vfx
+# import moviepy as me
 
 
 app = Flask(__name__)
